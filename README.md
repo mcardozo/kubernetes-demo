@@ -11,7 +11,7 @@ About this repository:
 
 <div align="center">
 	<p align="center">
-		<img src="imagenes_proyecto/architecture.png" />
+		<img src="imagenes-proyecto/architecture.png" />
 	</p>
 </div>
 
