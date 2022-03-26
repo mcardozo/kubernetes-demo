@@ -83,7 +83,46 @@ About this repository:
 
 		$ kubectl get nodes
 
+9. Show all resources
+
+		$ kubectl get all
+
+## Play with Kubernetes
+
+1. Instance 1:
+
+		$ kubeadm init --apiserver-advertise-address $(hostname -i)
+
+2. Copy token, create new instance and paste
+
+3. Initialize cluster networking
+
+		$ kubectl apply -f https://raw.githubusercontent.com/cloudnativelabs/kube-router/master/daemonset/kubeadm-kuberouter.yaml
+
+4. Create an nginx deployment:
+
+		$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/application/nginx-app.yaml
+
+5. Get nodes
+
+		$ kubectl get nodes
+
+6. Get pods
+
+		$ kubectl get pod
+
+7. Show logs of specific pod
+
+		$ kubectl logs deploy/podname
+
+		$ kubectl logs deploy/podname --tail 20
+
+		$ kubectl logs deploy/podname --tail 20 -f
+
+		$ kubectl logs -l run=podbane
+
 ## Recommended
 
 * [Kubernetes The Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way)
 * [minikube](https://github.com/kubernetes/minikube)
+* [Play with Kubernetes](https://labs.play-with-k8s.com/)
