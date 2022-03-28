@@ -131,3 +131,25 @@ Expose internal and external services
 5. Delete label
 
 		$ kubectl label pod podname app-
+
+## Manage deployment
+
+1. Show deployments
+
+		$ kubectl get deploy -o json
+
+2. Update image
+
+		$ kubectl set image deploy <name> worker=<image>:<tag>
+
+3. Show deploys
+
+		$ kubectl get replicasets -w
+
+4. Update deploy at runtime
+
+		$ kubectl edit deploy <name>
+
+5. Rollback
+
+		$ kubectl rollout undo deploy <name>
