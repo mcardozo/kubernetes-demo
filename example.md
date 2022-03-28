@@ -30,6 +30,7 @@
 
 		$ kubectl get pods
 
+		$ kubectl get podes -w
 
 6. Show logs
 
@@ -107,4 +108,26 @@ Expose internal and external services
 
 		$ kubectl get service -n kube-system
 
-4.
+## Load balancing and Daemon sets
+
+1. Export rng settings
+
+		$ kubectl get deploy/rng -o yaml > rng.yml
+
+2. Change kind: `Deployment` to `DaemonSet`
+
+3. Apply change
+
+		$ kubectl apply -f rng.yml
+
+		$ kubectl apply -f rng.yml --validate=false
+
+		$ kubectl describe service rng
+
+4. Add label
+
+		$ kubectl get pods --selector=app=rng
+
+5. Delete label
+
+		$ kubectl label pod podname app-
