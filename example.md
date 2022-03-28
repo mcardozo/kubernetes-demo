@@ -32,6 +32,10 @@
 
 		$ kubectl get podes -w
 
+		$ kubectl describe pod podname
+
+		$ kubectl exec podname -it bash
+
 6. Show logs
 
 		$ kubectl logs deploy/rng
