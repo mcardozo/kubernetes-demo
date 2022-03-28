@@ -87,6 +87,18 @@ About this repository:
 
 		$ kubectl get all
 
+10. Delete pod
+
+		$ kubectl delete pods podname
+
+11. Delete a service
+
+		$ kubectl delete service servicename
+
+12. Delete all of the minikube clusters:
+
+		$ minikube delete --all
+
 ## Play with Kubernetes
 
 1. Instance 1:
@@ -120,6 +132,14 @@ About this repository:
 		$ kubectl logs deploy/podname --tail 20 -f
 
 		$ kubectl logs -l run=podbane
+
+8. Add replicas
+
+		$ kubectl scale deployment httpenv --replicas=10
+
+9. Expose port
+
+		$ kubectl expose deployment pod --port=8888
 
 ## Recommended
 
