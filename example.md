@@ -157,3 +157,31 @@ Expose internal and external services
 5. Rollback
 
 		$ kubectl rollout undo deploy <name>
+
+## Config map
+
+1. Create a config map
+
+		$ kubectl create configmap haproxy --from-file=haproxy.cfg
+
+2. See configmaps
+
+		$ kubectl get configmap haproxy -o yaml | less
+
+3. Apply configmap to pod
+
+		$ kubectl apply -f haproxy.yaml
+
+## Namespaces
+
+1. List namespaces in cluster
+
+		$ kubectl get namespace
+
+2. To set the namespace for a current request, use the --namespace flag. For example:
+
+		$ kubectl get pods --namespace=[namespaceName]
+
+3. You can permanently save the namespace for all subsequent kubectl commands in that context.
+
+		$ kubectl config set-context --current --namespace=[namespaceName]
